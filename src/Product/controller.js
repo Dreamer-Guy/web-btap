@@ -85,9 +85,9 @@ const getProductById = async (req, res) => {
                 product:null,
             });
         }
-        const populateProduct = populateProduct(product);
+        const populatedProduct = populateProduct(product);
         return res.json({
-            product:populateProduct,
+            product:populatedProduct,
         })
     }
     catch (e) {

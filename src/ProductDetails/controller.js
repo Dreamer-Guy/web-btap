@@ -2,13 +2,13 @@ import serviceFactory from "../Factory/serviceFactory.js";
 
 const productDetailService=serviceFactory.getProductDetailsSerVice();
 
-const getProductDetails=async(req,res)=>{
+const getProductDetailsByID=async(req,res)=>{
     try{
         const {id}=req.params;
         const productDetails=await productDetailService.get(id);
         if(productDetails){
             return res.json({
-                productDetails:productDetails,
+                productDetail:productDetails,
             });
         }else{
             return res.json({
@@ -23,4 +23,25 @@ const getProductDetails=async(req,res)=>{
     }
 }
 
-export {getProductDetails};
+const getProductAllDetails=async(req,res)=>{
+    try{
+        const productDetails=await productDetailService.getAll();
+        if(productDetails){
+            return res.json({
+                productDetails:productDetails,
+            });
+        }
+        else{
+            return res.json({
+                productDetails:null,
+            })
+        }
+    }
+    catch(error){
+        return res.json({
+            productDetails:null,
+        });
+    }
+}
+
+export {getProductDetailsByID,getProductAllDetails};

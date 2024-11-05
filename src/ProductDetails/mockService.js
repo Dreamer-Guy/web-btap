@@ -119,7 +119,10 @@ const productDetailsService={
     get:async(id)=>{
         const index=productDetails.findIndex((productDetail)=>productDetail.productId===id);
         return productDetails[index];
-    }   
+    },  
+    getAll:async()=>{
+        return productDetails;
+    },
 };
 
 export default productDetailsService;

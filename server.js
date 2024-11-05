@@ -9,12 +9,13 @@ const PORT = 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+app.use(express.static(join(__dirname, 'public')));
 
-// Serve static files from the 'public' directory
-// app.use(express.static(join(__dirname, 'public')));
+app.use("/products", express.static(join(__dirname, 'public','product-detail.html')));
 
-app.use("/products", productRouter);
-app.use("/productDetails", productDetailsRouter);
+
+app.use("/api/products", productRouter);
+app.use("/api/productDetails", productDetailsRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

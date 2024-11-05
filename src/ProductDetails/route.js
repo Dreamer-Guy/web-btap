@@ -1,7 +1,9 @@
 import express from "express";
-import { getProductDetails } from "./controller.js";
+import { getProductAllDetails,getProductDetailsByID } from "./controller.js";
 
-const shoppingProductRouter=express.Router();
+const shoppingProductDetailsRouter=express.Router();
 
-shoppingProductRouter.get("/get/:id",getProductDetails);
-export default shoppingProductRouter;
+shoppingProductDetailsRouter.get("/get/:id",getProductDetailsByID);
+shoppingProductDetailsRouter.get("/get",getProductAllDetails);
+
+export default shoppingProductDetailsRouter;
