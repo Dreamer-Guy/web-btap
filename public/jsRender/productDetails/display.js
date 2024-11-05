@@ -1,64 +1,66 @@
 function generateStars(rating) {
-    let stars = '';
-    for (let i = 0; i < 5; i++) {
-        if (i < rating) {
-            stars += '<li><i class="fa fa-star"></i></li>'; // Full star
-        } else {
-            stars += '<li class="no-star"><i class="fa fa-star-o"></i></li>'; // Empty star
-        }
+  let stars = '';
+  for (let i = 0; i < 5; i++) {
+    if (i < rating) {
+      stars += '<li><i class="fa fa-star"></i></li>'; // Full star
+    } else {
+      stars += '<li class="no-star"><i class="fa fa-star-o"></i></li>'; // Empty star
     }
-    return stars;
+  }
+  return stars;
 }
 
-function getLargeProductImages(products) {
-    const largeImgs = products.reduce((acc, product) => {
-        const newImgDisplay = `
-        <div class="lg-image">
-            <a
-            class="popup-img venobox vbox-item"
-            href="${product.image}"
-            data-gall="myGallery"
-            >
-                <img
-                    src="${product.image}"
-                    alt="product image"
-                />
-            </a>
-        </div>`;
-        acc += newImgDisplay;
-        return acc;
-    }, "");
-    return largeImgs;
+function getLargeProductImages(product) {
+  const newImgDisplay = `
+    <div class="lg-image">
+        <a
+        class="popup-img venobox vbox-item"
+        href="${product.image}"
+        data-gall="myGallery"
+        >
+            <img
+                src="${product.image}"
+                alt="product image"
+            />
+        </a>
+    </div>`;
+
+  return newImgDisplay;
 }
 
 
 const getLeftContent = (products) => {
-    const productListImages = getLargeProductImages(products);
-    const LeftContent = `
-    <div class="product-details-left">
+  const productListImages = getLargeProductImages(products);
+  const LeftContent = `
+    <div class="col-lg-5 col-md-6">
+      <div class="product-details-left">
         <div class="product-details-images slider-navigation-1">
-        ${productListImages}
+          ${productListImages}    
         </div>
+      </div>
     </div>
     `;
-    return LeftContent;
+  return LeftContent;
 };
 
 function showDetails(productDetails) {
-    const listedDetails = "";
-    for (const detail of productDetails) {
-        listedDetails += `
+  var listedDetails = "";
+  console.log(productDetails);
+  for (const detail of Object.keys(productDetails)) {
+    const detailItem = `
         <div>
             <h3>${detail}</h3>
             <span>${productDetails[detail]}</span>
         </div>
-        `;
-    }
-    return showDetails;
+    `;
+    listedDetails += detailItem;
+  }
+  return listedDetails;
 }
 
-function getRightContent(product,productDetails) {
-    const rightContent = `
+function getRightContent(product, productDetails) {
+  const listedDetails=showDetails(productDetails);
+  const rightContent = `
     <div class="col-lg-7 col-md-6">
             <div class="product-details-view-content pt-60">
               <div class="product-info">
@@ -75,7 +77,7 @@ function getRightContent(product,productDetails) {
                 </div>
                 <div class="product-desc">
                   <p>
-                    ${showDetails(productDetails)}
+                    ${listedDetails}
                   </p>
                 </div>
                 <div class="single-add-to-cart">
@@ -156,18 +158,21 @@ function getRightContent(product,productDetails) {
               </div>
             </div>
           </div>`;
-    return rightContent;
+  return rightContent;
 }
 $(document).ready(function () {
-    $.get(`/api/products/get`, function (dataProducts) {
-        const id="P01";//tech-debt: how to get id
-        $.get(`/api/productDetails/get/${id}`, function (productDetails) {
-            const products = dataProducts.products;
-            const leftContent = getLeftContent(products);
-            const rightContent = getRightContent(productDetails);
-            // $('#display-product-details').replaceWith(productDisplayHtml);
-        });
+  const id = "P01"; //tech-debt: how to get id
+  $.get(`/api/products/get/${id}`, function (dataProduct) {
+    $.get(`/api/productDetails/get/${id}`, function (dataproductDetails) {
+      const product = dataProduct.data;
+      const productDetails = dataproductDetails.data;
+      const leftContent = getLeftContent(product);
+      const rightContent = getRightContent(product, productDetails);
+      const productDisplayHtml = leftContent + rightContent;
+      const Ele = document.getElementById("display-single-product-details");
+      Ele.innerHTML = productDisplayHtml;
     });
+  });
 });
 
 

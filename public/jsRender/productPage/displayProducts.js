@@ -69,7 +69,7 @@ function getProductsElement(products) {
 
 $(document).ready(function () {
     $.get(`/api/products/get`, function (dataProducts) {
-        const products=dataProducts.products;
+        const products=dataProducts.data;
         const productsElement = getProductsElement(products);
         const newEle=document.createElement("div");
         newEle.innerText=productsElement;

@@ -66,12 +66,12 @@ const fetchAllFilteredProducts = async (req, res) => {
         // }
         const populateProducts = products.map((product) => (populateProduct(product)));
         return res.json({
-            products: populateProducts,
+            data: populateProducts,
         })
     }
     catch (e) {
         return res.json({
-            products: [],
+            data: null,
         });
     }
 };
@@ -82,17 +82,17 @@ const getProductById = async (req, res) => {
         const product=await productService.getProductById(id);
         if (!product) {
             return res.json({
-                product:null,
+                data:null,
             });
         }
         const populatedProduct = populateProduct(product);
         return res.json({
-            product:populatedProduct,
+            data:populatedProduct,
         })
     }
     catch (e) {
         return res.json({
-            product:null,
+            data:null,
         })
     }
 };

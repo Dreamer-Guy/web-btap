@@ -8,17 +8,17 @@ const getProductDetailsByID=async(req,res)=>{
         const productDetails=await productDetailService.get(id);
         if(productDetails){
             return res.json({
-                productDetail:productDetails,
+                data:productDetails,
             });
         }else{
             return res.json({
-                productDetail:null,
+                data:null,
             })
         }
     }
     catch(error){
         return res.json({
-            productDetail:null,
+            data:null,
         });
     }
 }
@@ -28,18 +28,18 @@ const getProductAllDetails=async(req,res)=>{
         const productDetails=await productDetailService.getAll();
         if(productDetails){
             return res.json({
-                productDetails:productDetails,
+                data:productDetails,
             });
         }
         else{
             return res.json({
-                productDetails:null,
+                data:null,
             })
         }
     }
     catch(error){
         return res.json({
-            productDetails:null,
+            data:null,
         });
     }
 }
