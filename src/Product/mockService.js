@@ -10,7 +10,7 @@ const mockProducts = [
         "brand": "TechBrand",
         "rating": 4.5,
         "totalStock": 50,
-        "image": "https://example.com/images/smartphone_xyz.jpg"
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     },
     {
         "_id": "P02",
@@ -19,7 +19,7 @@ const mockProducts = [
         "price": 199.99,
         "brand": "CleanAir",
         "totalStock": 30,
-        "image": "https://example.com/images/air_purifier_3000.jpg",
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "rating": 4.8
     },
     {
@@ -30,7 +30,7 @@ const mockProducts = [
         "salePrice": 119.99,
         "brand": "StyleCo",
         "totalStock": 20,
-        "image": "https://example.com/images/leather_jacket.jpg",
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "rating": 4.2
     },
     {
@@ -40,7 +40,7 @@ const mockProducts = [
         "price": 29.99,
         "brand": "GlowUp",
         "totalStock": 100,
-        "image": "https://example.com/images/skin_care_lotion.jpg"
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     },
     {
         "_id": "P05",
@@ -50,7 +50,7 @@ const mockProducts = [
         "salePrice": 79.99,
         "brand": "SoundWave",
         "totalStock": 75,
-        "image": "https://example.com/images/wireless_earbuds.jpg",
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "rating": 4.6
     },
     {
@@ -60,7 +60,7 @@ const mockProducts = [
         "price": 24.99,
         "brand": "FitLife",
         "totalStock": 150,
-        "image": "https://example.com/images/yoga_mat.jpg",
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "rating": 4.3
     },
     {
@@ -71,7 +71,7 @@ const mockProducts = [
         "salePrice": 69.99,
         "brand": "BrewMaster",
         "totalStock": 60,
-        "image": "https://example.com/images/coffee_maker.jpg",
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "rating": 4.1
     },
     {
@@ -81,7 +81,7 @@ const mockProducts = [
         "price": 39.99,
         "brand": "BeautyBliss",
         "totalStock": 80,
-        "image": "https://example.com/images/makeup_brush_set.jpg",
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "rating": 4.7
     },
     {
@@ -92,7 +92,7 @@ const mockProducts = [
         "salePrice": 79.99,
         "brand": "SportyStyle",
         "totalStock": 40,
-        "image": "https://example.com/images/running_shoes.jpg",
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "rating": 4.5
     },
     {
@@ -102,7 +102,7 @@ const mockProducts = [
         "price": 199.99,
         "brand": "WristTech",
         "totalStock": 25,
-        "image": "https://example.com/images/smartwatch.jpg",
+        "image": "https://images.pexels.com/photos/3765175/pexels-photo-3765175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "rating": 4.4
     }
 ];

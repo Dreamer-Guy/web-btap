@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 app.use(express.static(join(__dirname, 'public')));
 
-app.use("/products", express.static(join(__dirname, 'public','product-detail.html')));
+app.use("/products", express.static(join(__dirname, 'public','shop-left-sidebar.html')));
 
 
 app.use("/api/products", productRouter);

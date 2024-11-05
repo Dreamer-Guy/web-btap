@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <!-- Modernizr js -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./jsRender/productPage/displayProducts.js"></script>
   </head>
   <body>
     <!--[if lt IE 8]>
@@ -564,7 +566,7 @@
                     role="tabpanel"
                   >
                     <div class="product-area shop-product-area">
-                      <div class="row">
+                      <div class="row" id="products-list">
                         <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                           <!-- single-product-wrap start -->
                           <div class="single-product-wrap">

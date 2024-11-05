@@ -31,31 +31,13 @@ function getLargeProductImages(products) {
     return largeImgs;
 }
 
-function getThumbnailProductImages(products) {
-    const Thumbnaildisplay = products.reduce((acc, product) => {
-        const newThumbnails = `
-        <div class="sm-image">
-          <img
-            src="${product.image}"
-            alt="product image thumb"
-          />
-        </div>`;
-        acc += newThumbnails;
-        return acc;
-    }, "");
-    return Thumbnaildisplay;
-}
 
 const getLeftContent = (products) => {
     const productListImages = getLargeProductImages(products);
-    const productListThumbnails = getThumbnailProductImages(products);
     const LeftContent = `
     <div class="product-details-left">
         <div class="product-details-images slider-navigation-1">
         ${productListImages}
-        </div>
-        <div class="product-details-thumbs slider-thumbs-1">
-        ${productListThumbnails}
         </div>
     </div>
     `;
@@ -178,9 +160,9 @@ function getRightContent(product,productDetails) {
 }
 $(document).ready(function () {
     $.get(`/api/products/get`, function (dataProducts) {
-        $.get(`/api/productDetails/get`, function (dataProductDetails) {
+        const id="P01";//tech-debt: how to get id
+        $.get(`/api/productDetails/get/${id}`, function (productDetails) {
             const products = dataProducts.products;
-            const productDetailsList = dataProductDetails.productDetails;
             const leftContent = getLeftContent(products);
             const rightContent = getRightContent(productDetails);
             // $('#display-product-details').replaceWith(productDisplayHtml);
